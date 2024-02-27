@@ -14,6 +14,9 @@
     <div class="dashboard">
       <p class="dollars-saved">${count}</p>
       <p class="dollars-saved-subtext">saved this month</p>
+      <div class="slide-container">
+        <input type="range" min="1" max="100" value={count} class="slider" id="myRange">
+      </div>
     </div>
     <div class="image">
       <div class="popup-question">
@@ -92,4 +95,13 @@
     width: 100%;
     top: 0;
   }
+  .slide-container {
+    display: flex;
+    justify-content: center;
+  }
+  input[type="range"] {
+    position: absolute;
+    top: 30%;
+    transform: rotate(270deg);
+}
 </style>
