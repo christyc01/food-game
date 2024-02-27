@@ -101,7 +101,37 @@
   }
   input[type="range"] {
     position: absolute;
-    top: 30%;
+    top: 40%;
     transform: rotate(270deg);
+    height: 5px;
+  }
+  .slider {
+  -webkit-appearance: none;
+  width: 50%;
+  height: 25px;
+  background: #FF7C58;
+  outline: none;
 }
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 0;
+  border-top: 25px solid white;
+  border-bottom: 25px solid transparent;
+  border-right: 20px solid transparent;
+  border-left: 20px solid transparent;
+  margin-bottom: 10px;
+}
+
+.slider::-moz-range-thumb {
+  width: 0;
+  height: 0;
+  border-top: 12.5px solid white;
+  border-bottom: 12.5px solid transparent;
+  border-right: 12.5px solid transparent;
+  border-left: 12.5px solid transparent;
+}
+  
 </style>
