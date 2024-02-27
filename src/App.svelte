@@ -9,7 +9,10 @@
 
 <main>
   <div class="screen">
-    <div class="dashboard"></div>
+    <div class="dashboard">
+      <p class="dollars-saved">$21.00</p>
+      <p class="dollars-saved-subtext">saved this month</p>
+    </div>
     <div class="image">
       <div class="popup-question">
         <h2>Question 1</h2>
@@ -49,6 +52,17 @@
   .dashboard {
     width: 355px;
     background-color: #485676;
+  }
+  .dollars-saved {
+    color: #FF7C58;
+    font-size: 50px;
+    font-weight: 800;
+    margin: 50px 0px 0px 0px;
+  }
+  .dollars-saved-subtext {
+    color: #FEFBDA;
+    font-size: 15px;
+    margin: 0px 0px 50px 0px;
   }
   .image {
     height: 100%;
