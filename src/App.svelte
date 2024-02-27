@@ -1,16 +1,18 @@
 <script>
+  let count = 0;
+
   const handleClickA = () => {
-    alert('Correct! Food is something to eat.');
+    count += 1;
   }
   const handleClickB = () => {
-    alert('Incorrect! Food is something to eat.');
+    count -= 1;
   }
 </script>
 
 <main>
   <div class="screen">
     <div class="dashboard">
-      <p class="dollars-saved">$21.00</p>
+      <p class="dollars-saved">${count}</p>
       <p class="dollars-saved-subtext">saved this month</p>
     </div>
     <div class="image">
