@@ -2,12 +2,16 @@
 	let count = 0;
 	let questionNumber = 1;
 	let sliderPointer;
+	let showAnswer;
+	let showQuestion;
+	let toggleAnswerOn = false;
 
 	const handleClickA = () => {
 		if (count >= 75) {
 			alert("You've saved enough money to buy a new car!");
 			return;
 		}
+		toggleAnswerOn = true;
 		count += 5;
 		questionNumber += 1;
 	};
@@ -16,11 +20,25 @@
 			alert("You've spent too much money on food this month!");
 			return;
 		}
+		toggleAnswerOn = true;
 		count -= 5;
 		questionNumber += 1;
 	};
 
+	const handleClickNext = () => {
+		toggleAnswerOn = false;
+	};
+
 	const sliderLinesPositions = [-25, 0, 25, 50, 75];
+	$: {
+		if (toggleAnswerOn && showAnswer && showQuestion) {
+			showAnswer.style.display = "block";
+			showQuestion.style.display = "none";
+		} else if (!toggleAnswerOn && showAnswer && showQuestion) {
+			showAnswer.style.display = "none";
+			showQuestion.style.display = "block";
+		}
+	}
 
 	$: {
 		if (sliderPointer) {
@@ -58,7 +76,7 @@
 			</div>
 		</div>
 		<div class="image">
-			<div class="popup-question">
+			<div class="popup-question" bind:this={showQuestion}>
 				<h2>Question {questionNumber}</h2>
 				<p>What even is food?</p>
 				<div class="buttons">
@@ -66,6 +84,13 @@
 					<button on:click={handleClickB}
 						>Something to post pictures of on Instagram</button
 					>
+				</div>
+			</div>
+			<div class="popup-answer" bind:this={showAnswer}>
+				<h2>Answer</h2>
+				<p>Details</p>
+				<div class="buttons">
+					<button on:click={handleClickNext}>Next</button>
 				</div>
 			</div>
 		</div>
@@ -122,6 +147,15 @@
 		align-items: center;
 	}
 	.popup-question {
+		position: absolute;
+		background-color: #ffa68a;
+		opacity: 0.95;
+		padding: 20px;
+		border-radius: 10px;
+		box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+	}
+	.popup-answer {
+		display: none;
 		position: absolute;
 		background-color: #ffa68a;
 		opacity: 0.95;
