@@ -1,11 +1,18 @@
 <script>
   let count = 0;
+  let sliderPointer;
 
   const handleClickA = () => {
-    count += 1;
+    count += 10;
   }
   const handleClickB = () => {
-    count -= 1;
+    count -= 10;
+  }
+
+  $: {
+    if (sliderPointer) { 
+      sliderPointer.style.bottom = `${count}%`; 
+    }
   }
 </script>
 
@@ -16,6 +23,7 @@
       <p class="dollars-saved-subtext">saved this month</p>
       <div class="slide-container">
         <input type="range" min="1" max="100" value={count} class="slider" id="myRange">
+        <div class="slider-pointer" bind:this={sliderPointer}></div>
       </div>
     </div>
     <div class="image">
@@ -96,42 +104,43 @@
     top: 0;
   }
   .slide-container {
+    position: relative;
     display: flex;
     justify-content: center;
+    height: 200px;
   }
   input[type="range"] {
     position: absolute;
-    top: 40%;
+    top: 75px;
     transform: rotate(270deg);
     height: 5px;
   }
   .slider {
-  -webkit-appearance: none;
-  width: 50%;
-  height: 25px;
-  background: #FF7C58;
-  outline: none;
-}
+    -webkit-appearance: none;
+    width: 200px;
+    height: 25px;
+    background: #FF7C58;
+    outline: none;
+  }
 
-/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 0;
-  border-top: 25px solid white;
-  border-bottom: 25px solid transparent;
-  border-right: 20px solid transparent;
-  border-left: 20px solid transparent;
-  margin-bottom: 10px;
-}
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+  }
 
-.slider::-moz-range-thumb {
-  width: 0;
-  height: 0;
-  border-top: 12.5px solid white;
-  border-bottom: 12.5px solid transparent;
-  border-right: 12.5px solid transparent;
-  border-left: 12.5px solid transparent;
-}
-  
+  .slider::-moz-range-thumb {
+    appearance: none;
+  }
+
+  .slider-pointer {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-left: 25px solid #FEFBDA;
+    border-bottom: 20px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 20px solid transparent;
+    margin-right: 10px;
+  }
+
 </style>
