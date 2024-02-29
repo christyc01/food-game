@@ -3,10 +3,18 @@
 	let sliderPointer;
 
 	const handleClickA = () => {
-		count += 10;
+		if (count >= 75) {
+			alert("You've saved enough money to buy a new car!");
+			return;
+		}
+		count += 5;
 	};
 	const handleClickB = () => {
-		count -= 10;
+		if (count <= -25) {
+			alert("You've spent too much money on food this month!");
+			return;
+		}
+		count -= 5;
 	};
 
 	const sliderLinesPositions = [-25, 0, 25, 50, 75];
