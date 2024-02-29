@@ -1,5 +1,6 @@
 <script>
 	let count = 0;
+	let questionNumber = 1;
 	let sliderPointer;
 
 	const handleClickA = () => {
@@ -8,6 +9,7 @@
 			return;
 		}
 		count += 5;
+		questionNumber += 1;
 	};
 	const handleClickB = () => {
 		if (count <= -25) {
@@ -15,6 +17,7 @@
 			return;
 		}
 		count -= 5;
+		questionNumber += 1;
 	};
 
 	const sliderLinesPositions = [-25, 0, 25, 50, 75];
@@ -56,7 +59,7 @@
 		</div>
 		<div class="image">
 			<div class="popup-question">
-				<h2>Question 1</h2>
+				<h2>Question {questionNumber}</h2>
 				<p>What even is food?</p>
 				<div class="buttons">
 					<button on:click={handleClickA}>Something to eat</button>
