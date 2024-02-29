@@ -79,7 +79,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="image">
+		<div class="image-and-questions">
 			<div class="popup-question" bind:this={showQuestion}>
 				<h2>Question {questionNumber}</h2>
 				<p>{data[questionNumber - 1].question}</p>
@@ -141,7 +141,7 @@
 		font-size: 15px;
 		margin: 0px 0px 50px 0px;
 	}
-	.image {
+	.image-and-questions {
 		height: 100%;
 		width: 100%;
 		background-image: url("./assets/kitchen.png");
