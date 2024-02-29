@@ -9,11 +9,14 @@
     count -= 10;
   }
 
+  const sliderLinesPositions = [-25, 0, 25, 50, 75];
+
   $: {
     if (sliderPointer) { 
-      sliderPointer.style.bottom = `${count}%`; 
+      sliderPointer.style.bottom = `${count + 25}%`; 
     }
   }
+
 </script>
 
 <main>
@@ -22,8 +25,13 @@
       <p class="dollars-saved">${count}</p>
       <p class="dollars-saved-subtext">saved this month</p>
       <div class="slide-container">
-        <input type="range" min="1" max="100" value={count} class="slider" id="myRange">
+        <input type="range" min="-25" max="75" value={count} class="slider" id="myRange">
         <div class="slider-pointer" bind:this={sliderPointer}></div>
+        <div class="slider-lines">
+          {#each sliderLinesPositions as position (position)}
+          <div class="slider-line" style="bottom: {position}%"></div>
+          {/each}
+        </div>
       </div>
     </div>
     <div class="image">
@@ -118,9 +126,23 @@
   .slider {
     -webkit-appearance: none;
     width: 200px;
-    height: 25px;
     background: #FF7C58;
     outline: none;
+  }
+
+  .slider-lines {
+    position: relative;
+    top: -65px;
+    left: 23px;
+    width: 50px;
+  }
+
+  .slider-line {
+    position: absolute;
+    width: 50px;
+    height: 5px;
+    background-color: #FF7C58;
+    transform: translateY(-2.5px);
   }
 
   .slider::-webkit-slider-thumb {
