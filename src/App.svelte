@@ -29,7 +29,11 @@
         <div class="slider-pointer" bind:this={sliderPointer}></div>
         <div class="slider-lines">
           {#each sliderLinesPositions as position (position)}
-          <div class="slider-line" style="bottom: {position}%"></div>
+          <div class="slider-lines-and-amounts" style="bottom: {position}%">
+
+            <div class="slider-line" ></div>
+            <p class="slider-label">${position}</p>
+          </div>
           {/each}
         </div>
       </div>
@@ -130,6 +134,15 @@
     outline: none;
   }
 
+  .slider-label {
+    color: #FEFBDA;
+    font-size: 18px;
+    font-weight: 800;
+    margin: 0;
+   	transform: translateY(-10px);
+   	padding-left: 10px;
+  }
+
   .slider-lines {
     position: relative;
     top: -65px;
@@ -138,10 +151,14 @@
   }
 
   .slider-line {
-    position: absolute;
-    width: 50px;
-    height: 5px;
     background-color: #FF7C58;
+    width: 30px;
+  }
+
+  .slider-lines-and-amounts {
+    display: flex;
+    position: absolute;
+    height: 5px;
     transform: translateY(-2.5px);
   }
 
