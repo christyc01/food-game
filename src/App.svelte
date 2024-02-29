@@ -1,4 +1,5 @@
 <script>
+	import data from "./data/questions-and-answers.json";
 	let count = 0;
 	let questionNumber = 1;
 	let sliderPointer;
@@ -78,16 +79,18 @@
 		<div class="image">
 			<div class="popup-question" bind:this={showQuestion}>
 				<h2>Question {questionNumber}</h2>
-				<p>What even is food?</p>
+				<p>{data[questionNumber - 1].question}</p>
 				<div class="buttons">
-					<button on:click={handleClickA}>Something to eat</button>
+					<button on:click={handleClickA}
+						>{data[questionNumber - 1].optionA}</button
+					>
 					<button on:click={handleClickB}
-						>Something to post pictures of on Instagram</button
+						>{data[questionNumber - 1].optionB}</button
 					>
 				</div>
 			</div>
 			<div class="popup-answer" bind:this={showAnswer}>
-				<h2>Answer</h2>
+				<h2>{data[questionNumber - 1].answer}</h2>
 				<p>Details</p>
 				<div class="buttons">
 					<button on:click={handleClickNext}>Next</button>

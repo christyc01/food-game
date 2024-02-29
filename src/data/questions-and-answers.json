@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "question": "What is the capital of France?",
+    "optionA": "Paris",
+    "optionB": "London",
+    "answer": "Paris because blah..."
+  },
+  {
+    "id": 2,
+    "question": "What is the capital of Spain?",
+    "optionA": "Madrid",
+    "optionB": "Lisbon",
+    "answer": "Madrid because blah..."
+  },
+  {
+    "id": 3,
+    "question": "What is the capital of Italy?",
+    "optionA": "Rome",
+    "optionB": "Athens",
+    "answer": "Rome because blah..."
+  }
+]
