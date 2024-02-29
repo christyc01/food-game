@@ -14,7 +14,6 @@
 		}
 		toggleAnswerOn = true;
 		count += 5;
-		questionNumber += 1;
 	};
 	const handleClickB = () => {
 		if (count <= -25) {
@@ -23,11 +22,15 @@
 		}
 		toggleAnswerOn = true;
 		count -= 5;
-		questionNumber += 1;
 	};
 
 	const handleClickNext = () => {
-		toggleAnswerOn = false;
+		if (questionNumber <= data.length - 1) {
+			toggleAnswerOn = false;
+			questionNumber += 1;
+		} else {
+			alert("You've answered all the questions!");
+		}
 	};
 
 	const sliderLinesPositions = [-25, 0, 25, 50, 75];
