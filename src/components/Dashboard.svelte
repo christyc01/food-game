@@ -5,20 +5,20 @@
 
 	$: {
 		if (sliderPointer) {
-			sliderPointer.style.bottom = `${count + 25}%`;
+			sliderPointer.style.bottom = `${$count + 25}%`;
 		}
 	}
 </script>
 
 <div class="dashboard">
-	<p class="dollars-saved">${count}</p>
+	<p class="dollars-saved">${$count}</p>
 	<p class="dollars-saved-subtext">saved this month</p>
 	<div class="slide-container">
 		<input
 			type="range"
 			min="-25"
 			max="75"
-			value={count}
+			value={$count}
 			class="slider"
 			id="myRange"
 		/>
