@@ -6,6 +6,7 @@
 	let questionNumber = 1;
 	let showAnswer;
 	let toggleAnswerOn = false;
+	let answerLetter = "";
 
 	const handleClickA = () => {
 		if ($count >= 75) {
@@ -13,6 +14,7 @@
 			return;
 		}
 		toggleAnswerOn = true;
+		answerLetter = "A";
 		count.update((n) => n + 5);
 	};
 	const handleClickB = () => {
@@ -21,6 +23,7 @@
 			return;
 		}
 		toggleAnswerOn = true;
+		answerLetter = "B";
 		count.update((n) => n - 5);
 	};
 
@@ -58,16 +61,23 @@
 		</div>
 	</div>
 	<div class="popup-answer" bind:this={showAnswer}>
-		<!-- TODO: Show answerA or B, depending on the option selected -->
-		<h2>{@html data[questionNumber - 1].answerA.split(/\\n/g)[0]}</h2>
+		<h2>
+			{@html `${
+				data[questionNumber - 1][`answer${answerLetter}`]?.split(
+					/\\n/g,
+				)[0]
+			}`}
+		</h2>
 		<p>
-			{@html data[questionNumber - 1].answerA.split(/\\n/g)[1]
-				? data[questionNumber - 1].answerA
-						.split(/\\n/g)[1]
-						.replace(/\\n/g, "<br>")
-				: ""}
+			{@html `${
+				data[questionNumber - 1][`answer${answerLetter}`]
+					? data[questionNumber - 1][`answer${answerLetter}`]
+							.split(/\\n/g)
+							.slice(1)
+							.join("<br>")
+					: ""
+			}`}
 		</p>
-
 		<div class="buttons">
 			<button on:click={handleClickNext}>Next</button>
 		</div>
