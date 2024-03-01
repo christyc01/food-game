@@ -79,7 +79,8 @@
 			}`}
 		</p>
 		<div class="buttons">
-			<button on:click={handleClickNext}>Next</button>
+			<button on:click={handleClickNext} class="arrow-button">Next</button
+			>
 		</div>
 	</div>
 	<div class="progress-dots">
@@ -98,6 +99,27 @@
 		flex-grow: 1;
 		background-color: #c4d6d3;
 		flex-basis: 0;
+		cursor: pointer;
+	}
+
+	.arrow-button {
+		display: inline-block;
+		padding: 10px 20px;
+		position: relative;
+		border: none;
+		margin-right: 10px;
+	}
+
+	.arrow-button:after {
+		content: "";
+		position: absolute;
+		top: 50%;
+		right: -35px;
+		margin-top: -20px;
+		border-width: 20px;
+		border-style: solid;
+		border-color: transparent transparent transparent #c4d6d3;
+		border-radius: 5px;
 	}
 	.buttons {
 		display: flex;
