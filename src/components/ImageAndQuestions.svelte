@@ -59,7 +59,15 @@
 	</div>
 	<div class="popup-answer" bind:this={showAnswer}>
 		<!-- TODO: Show answerA or B, depending on the option selected -->
-		<p>{@html data[questionNumber - 1].answerA.replace(/\\n/g, "<br>")}</p>
+		<h2>{@html data[questionNumber - 1].answerA.split(/\\n/g)[0]}</h2>
+		<p>
+			{@html data[questionNumber - 1].answerA.split(/\\n/g)[1]
+				? data[questionNumber - 1].answerA
+						.split(/\\n/g)[1]
+						.replace(/\\n/g, "<br>")
+				: ""}
+		</p>
+
 		<div class="buttons">
 			<button on:click={handleClickNext}>Next</button>
 		</div>
