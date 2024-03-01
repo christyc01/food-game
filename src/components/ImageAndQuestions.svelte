@@ -82,6 +82,15 @@
 			<button on:click={handleClickNext}>Next</button>
 		</div>
 	</div>
+	<div class="progress-dots">
+		{#each data as dot, i}
+			{#if i <= questionNumber - 1}
+				<div class="progress-dot filled"></div>
+			{:else}
+				<div class="progress-dot"></div>
+			{/if}
+		{/each}
+	</div>
 </div>
 
 <style>
@@ -122,5 +131,24 @@
 		padding: 20px;
 		border-radius: 10px;
 		box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+	}
+
+	.progress-dots {
+		display: flex;
+		align-self: flex-end;
+		margin-bottom: 20px;
+		gap: 10px;
+	}
+
+	.progress-dot {
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		background-color: #ffa68a;
+		opacity: 30%;
+	}
+
+	.filled {
+		opacity: 100%;
 	}
 </style>
