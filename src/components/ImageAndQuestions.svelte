@@ -58,8 +58,8 @@
 		</div>
 	</div>
 	<div class="popup-answer" bind:this={showAnswer}>
-		<h2>{data[questionNumber - 1].answer}</h2>
-		<p>Details</p>
+		<!-- TODO: Show answerA or B, depending on the option selected -->
+		<p>{@html data[questionNumber - 1].answerA.replace(/\\n/g, "<br>")}</p>
 		<div class="buttons">
 			<button on:click={handleClickNext}>Next</button>
 		</div>

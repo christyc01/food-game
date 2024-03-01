@@ -1,23 +1,26 @@
 [
   {
     "id": 1,
-    "question": "What is the capital of France?",
-    "optionA": "Paris",
-    "optionB": "London",
-    "answer": "Paris because blah..."
+    "question": "Your half full container of hummus has passed its best before date by two days, but it looks and smells fine. What do you do?",
+    "optionA": "Throw it out",
+    "optionB": "Finish eating it ",
+    "answerA": "You lost $4",
+    "answerB": "<b>You saved $4.00</b> \\n by finishing the hummus. \\n\\n <b>Fact</b>\\n Food is not inedible or expired after the best before date. The dates set by manufacturers are conservative, and are not government regulated. \\n\\n <b>Tip</b>\\n Regularly check dates on food and incorporate them into your meals while they are still fresh and appetizing."
   },
   {
     "id": 2,
-    "question": "What is the capital of Spain?",
-    "optionA": "Madrid",
-    "optionB": "Lisbon",
-    "answer": "Madrid because blah..."
+    "question": "After a busy week of school/work, you have forgotten to eat a serving of leftover salmon and it has developed a mild, but unusual smell. What do you do?",
+    "optionA": "Eat it for lunch",
+    "optionB": "Throw it out",
+    "answerA": "<b>You got food poisoning, and lost $10.00</b> \\n when you threw up the salmon. \\n\\n <b>Fact</b>\\n\\n Don’t eat food off in color, smell or taste. Even if money and food are wasted, it is better than falling ill.\\n\\n <b>Tip</b>\\n Regularly check cooked leftovers for quality and label them with dates to keep track of freshness.",
+    "answerB": "You didn't get sick, yay!"
   },
   {
     "id": 3,
-    "question": "What is the capital of Italy?",
-    "optionA": "Rome",
-    "optionB": "Athens",
-    "answer": "Rome because blah..."
+    "question": "While making a shopping list, you check the fridge and see how crowded it is. It will eat into your free time to clean, but you can shop afterwards. What will you do?",
+    "optionA": "Do a quick scan of fridge",
+    "optionB": "Clear out the fridge",
+    "answerA": "<b>You lost $5.00</b>\\n because there was cooked chicken hiding in the back. \\n\\n <b>Fact</b>\\n Avoid overcrowding your fridge to improve the circulation of cold air, and to ensure nothing is forgotten in the back. \\n\\n <b>Tip</b>\\n Catch food that’s gone bad or is about to with quality checks. Also find foods nearing their best before date. \\n\\n Doing a deep clean once a week is recommended.",
+    "answerB": "You found some chicken and saved money, woohoo!"
   }
 ]
